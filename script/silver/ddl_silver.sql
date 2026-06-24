@@ -9,7 +9,7 @@ C:\Users\reach\OneDrive\Data Engineer Path\DataWithBaraa\sql-data-warehouse-proj
 if object_id ('silver.crm_cust_info', 'u') is not null
 	drop table silver.crm_cust_info;
 create table silver.crm_cust_info (
-	cst_id int,
+	cst_id nvarchar(50),
 	cst_key nvarchar(50),
 	cst_firstname nvarchar(50),
 	cst_lastname nvarchar(50),
