@@ -32,7 +32,7 @@ on ci.cst_key = ca.cid
 left join silver.erp_loc_a101 as la
 on ci.cst_key = la.cid
 );
-
+go
 
 create or alter view gold.dim_products as (
 select
@@ -53,12 +53,11 @@ pn.cat_id = pc.id
 where
 	pn.prd_end_dt is null -- only continuing products
 );
-
+go
 
 
 create or alter view gold.fact_sales as (
 select
-	top 100
 	sd.sls_ord_num as order_number,
 	pr .product_key,
 	cu.customer_key,
@@ -74,3 +73,4 @@ on sd.sls_prd_key = pr.product_number
 left join gold.dim_customers as cu
 on sd.sls_cust_id = cu.customer_id
 );
+go
